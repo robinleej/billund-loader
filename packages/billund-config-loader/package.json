@@ -1,0 +1,26 @@
+{
+  "name": "billund-config-loader",
+  "version": "0.0.1",
+  "description": "billund widget config webpack loader",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "billund",
+    "widget",
+    "config",
+    "loader"
+  ],
+  "author": "robin.li",
+  "license": "MIT",
+  "dependencies": {
+    "babel-generator": "^6.22.0",
+    "babel-traverse": "^6.22.1",
+    "babel-types": "^6.22.0",
+    "babylon": "^6.15.0",
+    "billund-source-parser": "^0.0.3",
+    "loader-utils": "^1.0.0",
+    "lodash": "^4.15.0"
+  }
+}
