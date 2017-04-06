@@ -1,6 +1,6 @@
 {
   "name": "billund-supportor-preprocessor-loader",
-  "version": "0.0.4",
+  "version": "0.1.1",
   "description": "billund supportor preprocessor webpack loader",
   "main": "lib/index.js",
   "scripts": {

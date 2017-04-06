@@ -1,6 +1,6 @@
 {
   "name": "billund-action-loader",
-  "version": "0.0.4",
+  "version": "0.1.1",
   "description": "billund action webpack loader",
   "main": "lib/index.js",
   "scripts": {
