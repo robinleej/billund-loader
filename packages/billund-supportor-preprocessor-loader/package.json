@@ -1,23 +1,23 @@
 {
-    "name": "billund-supportor-preprocessor-loader",
-    "version": "1.0.1",
-    "description": "billund supportor preprocessor webpack loader",
-    "main": "lib/index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [
-        "billund",
-        "supportor",
-        "preprocessor",
-        "loader"
-    ],
-    "author": "robin.li",
-    "license": "MIT",
-    "dependencies": {
-        "babel-generator": "^6.22.0",
-        "babel-traverse": "^6.22.1",
-        "babel-types": "^6.21.0",
-        "billund-enums": "^1.0.0"
-    }
+  "name": "billund-supportor-preprocessor-loader",
+  "version": "0.0.4",
+  "description": "billund supportor preprocessor webpack loader",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "billund",
+    "supportor",
+    "preprocessor",
+    "loader"
+  ],
+  "author": "robin.li",
+  "license": "MIT",
+  "dependencies": {
+    "babel-generator": "^6.22.0",
+    "babel-traverse": "^6.22.1",
+    "babel-types": "^6.21.0",
+    "billund-enums": "^1.0.0"
+  }
 }
