@@ -24,7 +24,7 @@ function genRequireExpression(exportFn) {
 }
 
 /**
- * 为lego的支持组件自动生成调用
+ * 为billund的支持组件自动生成调用
  *
  * @param  {String} source - action的源代码
  * @return {String}
@@ -37,7 +37,7 @@ module.exports = function(source) {
     	我们约定，需要暴露的是预处理函数
     	1.module.exports
     	2.export default
-    	全都转化成require('lego-supportor').useContextPreProcessor
+    	全都转化成require('billund-supportor').useContextPreProcessor
      */
     const ast = babylon.parse(source);
     traverse(ast, {
