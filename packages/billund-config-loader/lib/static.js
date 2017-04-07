@@ -39,7 +39,6 @@ module.exports = function(source) {
         const fromPath = requireMap[key];
         const keyNode = babelTypes.identifier(key);
         const fromPathNode = babelTypes.stringLiteral(fromPath);
-        console.log(keyNode);
         return babelTypes.importDeclaration(
             [babelTypes.importDefaultSpecifier(keyNode)], fromPathNode);
     });

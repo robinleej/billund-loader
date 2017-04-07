@@ -127,19 +127,18 @@ module.exports = function(source) {
             window.setTimeout(function(){
                 resolve();
             }, 5);
-            return;
-        }
+        } else{
+            domReady()(function() {
+                window.setTimeout(function() {
+                    resolve();
+                }, 1500);
+            });
 
-        domReady()(function() {
-            window.setTimeout(function() {
-                resolve();
-            }, 1500);
-        });
-
-        addEventListener(window, 'load', function() {
-            window.setTimeout(function() {
-                resolve();
-            }, 5);
-        });
+            addEventListener(window, 'load', function() {
+                window.setTimeout(function() {
+                    resolve();
+                }, 5);
+            });
+        }  
     `;
 };
