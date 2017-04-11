@@ -39,7 +39,8 @@ module.exports = function(source) {
         step:
         1.先拿取query中的widgetName -> widgetPath 的映射关系,通过源码解析action拿取所有的widget
         2.转换loaders为对应的字符串式引用
-        3.区分核心模块和非核心模块，生成代码
+        3.抓取action中的store配置,注册到前端(在组件之前)
+        4.区分核心模块和非核心模块，生成代码
      */
     const widgetNameToPath = query.widgetNameToPath || {};
     const widgetNames = Object.keys(widgetNameToPath);
@@ -60,6 +61,10 @@ module.exports = function(source) {
     });
     const requirePrefix = `!${widgetLoaderRequests.join('!')}!`;
 
+    // 抓取storeConfig配置
+    let storeConfigStr = actionParser.extractStoreConfig(source);
+    storeConfigStr = storeConfigStr ? `${BILLUND_SUPPORTOR_IDENTIFIER}.${SupportorEnums.BROWSER_SUPPORTOR_REGIST_STORE_CONFIG}(${storeConfigStr})` : '';
+
     // 根据weight区分核心模块与非核心模块
     const mostImportantWidgets = widgetUtils.extractImportantWidgets(widgets);
     const otherWidgets = _.difference(widgets, mostImportantWidgets);
@@ -74,6 +79,7 @@ module.exports = function(source) {
     return `
         'use strict';
         var ${BILLUND_SUPPORTOR_IDENTIFIER} = require('${SupportorEnums.BROWSER_SUPPORTOR_PACKAGE_NAME}');
+        ${storeConfigStr}
         ${mostImportantWidgetsSource}
 
         var addEventListener = (function() {
@@ -139,6 +145,6 @@ module.exports = function(source) {
                     resolve();
                 }, 5);
             });
-        }  
+        }
     `;
 };
