@@ -14,5 +14,5 @@ module.exports = function(source) {
     const state = {
         dirname
     };
-    return parser.correctTemplate(source, state);
+    return parser.correctStoreConfig(parser.correctTemplate(source, state), state);
 };
