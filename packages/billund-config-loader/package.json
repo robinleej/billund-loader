@@ -1,6 +1,6 @@
 {
   "name": "billund-config-loader",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "billund widget config webpack loader",
   "main": "lib/index.js",
   "scripts": {
