@@ -104,7 +104,7 @@ module.exports = function(source) {
                 Array.prototype.slice.call(arguments).forEach(function(widget){
                     ${BILLUND_SUPPORTOR_IDENTIFIER}.registWidgetModule(widget);
                 });
-                console.log('lego require async done.');
+                console.log('billund require async done.');
             });
         }
 
