@@ -17,14 +17,14 @@
   "dependencies": {
     "babel-traverse": "^6.21.0",
     "babylon": "^6.14.1",
-    "billund-enums": "^0.1.0",
-    "billund-source-parser": "^0.1.0",
-    "billund-utils": "^0.1.0",
+    "billund-enums": "^1.0.0-alpha.1",
+    "billund-source-parser": "^1.0.0-alpha.1",
+    "billund-utils": "^1.0.0-alpha.1",
     "loader-utils": "^1.0.0",
     "lodash": "^4.15.0"
   },
   "peerDependencies": {
-    "billund-config-loader": "^0.1.0",
+    "billund-config-loader": "^1.0.0-alpha.1",
     "babel-loader": "^6.2.0 || ^7.0.0",
     "webpack": "^2.0.0"
   }
