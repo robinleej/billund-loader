@@ -46,12 +46,13 @@ module.exports = function(source) {
     const widgetNames = Object.keys(widgetNameToPath);
     if (!(widgetNames && widgetNames.length)) {
         console.warn(`missing widgetNameToPath in billund-action-loader option-query`);
-        return '';
     }
     const widgets = actionParser.extractWidgetInfos(source, {
         widgetNames
     });
-    if (!(widgets && widgets.length)) return '';
+    if (!(widgets && widgets.length)) {
+        console.warn(`missing widgets in ${this.resourcePath}`);
+    }
 
     // 拼接loaderStr
     const widgetLoaders = query.widgetLoaders || DEFAULT_WIDGET_LOADERS;
