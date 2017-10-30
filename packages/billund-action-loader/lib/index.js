@@ -62,6 +62,10 @@ module.exports = function(source) {
     });
     const requirePrefix = `!${widgetLoaderRequests.join('!')}!`;
 
+    // 抓取routerConfig配置
+    let routerConfigStr = actionParser.extractRouterConfig(source);
+    routerConfigStr = routerConfigStr ? `${BILLUND_SUPPORTOR_IDENTIFIER}.${SupportorEnums.BROWSER_SUPPORTOR_REGISTER_ROUTER_CONFIG}(${routerConfigStr})` : '';
+
     // 抓取storeConfig配置
     let storeConfigStr = actionParser.extractStoreConfig(source);
     storeConfigStr = storeConfigStr ? `${BILLUND_SUPPORTOR_IDENTIFIER}.${SupportorEnums.BROWSER_SUPPORTOR_REGIST_STORE_CONFIG}(${storeConfigStr})` : '';
@@ -80,6 +84,7 @@ module.exports = function(source) {
     return `
         'use strict';
         var ${BILLUND_SUPPORTOR_IDENTIFIER} = require('${SupportorEnums.BROWSER_SUPPORTOR_PACKAGE_NAME}');
+        ${routerConfigStr}
         ${storeConfigStr}
         ${mostImportantWidgetsSource}
 
