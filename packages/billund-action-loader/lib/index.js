@@ -64,7 +64,7 @@ module.exports = function(source) {
 
     // 抓取routerConfig配置
     let routerConfigStr = actionParser.extractRouterConfig(source) || '';
-    routerConfigStr = `${BILLUND_SUPPORTOR_IDENTIFIER}.${SupportorEnums.BROWSER_SUPPORTOR_REGISTER_ROUTER_CONFIG}(${routerConfigStr})`;
+    routerConfigStr = `${BILLUND_SUPPORTOR_IDENTIFIER}.${SupportorEnums.BROWSER_SUPPORTOR_REGISTER_ROUTER_CONFIG} && ${BILLUND_SUPPORTOR_IDENTIFIER}.${SupportorEnums.BROWSER_SUPPORTOR_REGISTER_ROUTER_CONFIG}(${routerConfigStr})`;
 
     // 抓取storeConfig配置
     let storeConfigStr = actionParser.extractStoreConfig(source);
