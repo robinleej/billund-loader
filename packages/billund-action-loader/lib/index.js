@@ -34,6 +34,10 @@ module.exports = function(source) {
         console.error(`billund-action-loader parse query fail.
             ${e.stack}`);
     }
+    const dirname = this.context;
+    const state = {
+        dirname
+    };
 
     /*
         step:
@@ -63,7 +67,7 @@ module.exports = function(source) {
     const requirePrefix = `!${widgetLoaderRequests.join('!')}!`;
 
     // 抓取routerConfig配置
-    let routerConfigStr = actionParser.extractRouterConfig(source) || '';
+    let routerConfigStr = actionParser.extractRouterConfig(source, state) || '';
     routerConfigStr = `${BILLUND_SUPPORTOR_IDENTIFIER}.${SupportorEnums.BROWSER_SUPPORTOR_REGISTER_ROUTER_CONFIG} && ${BILLUND_SUPPORTOR_IDENTIFIER}.${SupportorEnums.BROWSER_SUPPORTOR_REGISTER_ROUTER_CONFIG}(${routerConfigStr})`;
 
     // 抓取storeConfig配置
