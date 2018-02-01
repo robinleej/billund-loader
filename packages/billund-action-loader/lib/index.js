@@ -51,9 +51,12 @@ module.exports = function(source) {
     if (!(widgetNames && widgetNames.length)) {
         console.warn(`missing widgetNameToPath in billund-action-loader option-query`);
     }
-    const widgets = actionParser.extractWidgetInfos(source, {
+
+    let widgets = query.allWidgets || [];
+    const extractWidgets = actionParser.extractWidgetInfos(source, {
         widgetNames
     });
+    widgets = widgets.concat(extractWidgets);
     if (!(widgets && widgets.length)) {
         console.warn(`missing widgets in ${this.resourcePath}`);
     }
